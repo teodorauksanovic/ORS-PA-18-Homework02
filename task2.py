@@ -15,3 +15,36 @@
 * from previous task to validate user input.
 ===================================================
 """
+
+
+def can_string_be_float(user_value):
+    allowed_characters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']
+
+    for ch in user_value:
+        if ch not in allowed_characters:
+            return False
+
+        number_of_dots = 0
+
+        for ch in user_value:
+            if ch == '.':
+                number_of_dots = number_of_dots + 1
+
+        if number_of_dots > 1:
+            return False
+
+    return True
+
+
+
+def main():
+    user_value = float(input("Enter a distance in miles: "))
+
+    conversionfactor = 1.609
+    kilometers = user_value * conversionfactor
+
+    if can_string_be_float(user_value):
+        print("The distance in kilometers is: ", kilometers)
+    else:
+        print("User value is not valid.")
+main()
