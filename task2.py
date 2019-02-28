@@ -16,8 +16,6 @@ def can_string_be_float(user_value):
         if broj_tacaka > 1:
             return False
 
-
-
     return True
 
 def main():
