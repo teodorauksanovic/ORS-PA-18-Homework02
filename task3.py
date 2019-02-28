@@ -17,9 +17,16 @@
 
 
 def main():
+    side_lenght = float(input('Enter a cube lenght:'))
 
-    side_in_cm = 5.0
-    volume_of_cube = cube_volume(side_in_cm)
-    print("Volume of a cube is: ", volume_of_cube)
+    float(side_lenght)
+    if float(side_lenght) < 0:
+        print('-1')
+        return main()
+    else:
+        print(side_lenght)
+
+    cube_volume = float(side_lenght)**3
+    print('Cube volume is', cube_volume)
 
 main()
